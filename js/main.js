@@ -1,15 +1,15 @@
-// Load shared page fragments so the header and footer can be maintained separately.
-document.querySelectorAll("[data-include]").forEach(async (slot) => {
-  try {
-    const response = await fetch(slot.dataset.include);
-    if (!response.ok) throw new Error(`Could not load ${slot.dataset.include}`);
-    slot.outerHTML = await response.text();
-  } catch (error) {
-    console.error(error);
-    slot.remove();
-  }
+// Load shared fragments so navigation and footer content stay easy to customize.
+const includes = [...document.querySelectorAll("[data-include]")].map(async (slot) => {
+  const path = slot.dataset.include;
+  const response = await fetch(path);
+  if (!response.ok) throw new Error(`Could not load ${path}`);
+  slot.outerHTML = await response.text();
 });
 
-document.querySelectorAll("[data-year]").forEach((element) => {
-  element.textContent = new Date().getFullYear();
+Promise.all(includes).then(() => {
+  document.querySelectorAll("[data-year]").forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
+}).catch((error) => {
+  console.error(error);
 });

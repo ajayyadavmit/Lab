@@ -1,15 +1,15 @@
 # Conscious Systems & Applied AI Lab
 
-A simple, responsive landing page for the **Conscious Systems & Applied AI Lab**. The site introduces the lab's focus on practical software engineering and ethical AI through cognitive resilience, intentional technology, and human-centered design, with an emphasis on computer science education research for pre-K–12 learners.
+A simple, responsive one-page site for the **Conscious Systems & Applied AI Lab**. It introduces the lab's inquiry into consciousness and applied AI and invites curious researchers and collaborators to join.
 
 ## About the lab
 
-The lab's outward-facing language is accessible to schools, research partners, technology sponsors, and grant programs. Its deeper pedagogical philosophy brings practical computer science learning into conversation with inner awareness, contemplative inquiry, and intentional technology use. The goal is to support young people as capable creators, attentive thinkers, and responsible participants in a technological world.
+The lab explores how applied AI can support human awareness, agency, learning, and meaningful connection. The site makes this focus accessible through a short research introduction and open questions for prospective collaborators.
 
 ## Website features
 
-- Editorial, researcher-inspired visual identity with a warm paper palette, restrained green accents, and an abstract orbit illustration.
-- Distinctive type pairing: [Newsreader](https://fonts.google.com/specimen/Newsreader) for expressive headings and [DM Mono](https://fonts.google.com/specimen/DM+Mono) for clear, technical supporting text.
+- Dark-only visual identity with bright, high-contrast accents and a landscape-format hero image.
+- Distinctive type pairing: [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) for editorial headings and [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible) for readable supporting text.
 - Responsive layouts for mobile and desktop, semantic page sections, keyboard focus styling, a skip link, and reduced-motion support.
 - Reusable header and footer HTML fragments, loaded by a small vanilla JavaScript file.
 - Central CSS design tokens for easy customization.
@@ -25,6 +25,8 @@ The lab's outward-facing language is accessible to schools, research partners, t
 │   └── footer.html            # Shared footer content
 ├── css/
 │   └── styles.css             # Design tokens, layout, responsive styles
+├── images/
+│   └── hero-landscape.svg     # Replaceable landscape-format hero artwork
 ├── js/
 │   └── main.js                # Loads the shared HTML fragments and year
 ├── LICENSE
@@ -51,26 +53,24 @@ Edit the custom properties at the top of [`css/styles.css`](css/styles.css):
 
 ```css
 :root {
-  --color-paper: #f4f1e8;
-  --color-paper-deep: #ebe6da;
-  --color-ink: #20231f;
-  --color-muted: #66695f;
-  --color-accent: #385e50;
-  --color-accent-light: #d3ded2;
-  --color-line: #d5d0c3;
-  --font-display: "Newsreader", Georgia, serif;
-  --font-body: "DM Mono", "Courier New", monospace;
-  --page-width: 1180px;
+  --color-bg: #111511;
+  --color-surface: #191f1a;
+  --color-ink: #f0efe8;
+  --color-muted: #b7c0b5;
+  --color-accent: #c2e6a8;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Atkinson Hyperlegible", Arial, sans-serif;
+  --page-width: 1240px;
   --page-gutter: clamp(1.25rem, 6vw, 5.5rem);
-  --space-section: clamp(5rem, 11vw, 9.5rem);
+  --space-section: clamp(5rem, 10vw, 9rem);
 }
 ```
 
-Change the Google Fonts URL in `index.html` to try other typefaces. Keep fallback fonts in the CSS so text remains readable if the external font service is unavailable.
+Replace `images/hero-landscape.svg` with your own landscape image, or update the image path in `index.html`. The hero frame scales with the viewport and is about half the screen height on mobile. To add or reorder menu links, edit the `<nav>` in `components/header.html` and point each link to a section ID on the page. Change the Google Fonts URL in `index.html` to try other typefaces; the CSS includes local fallbacks.
 
 ## Update the content and shared fragments
 
-- Edit `index.html` to update the hero, lab purpose, research areas, approach, and contact section.
+- Edit `index.html` to update the hero, research focus, questions, and invitation.
 - Edit `components/header.html` to change the lab name or navigation.
 - Edit `components/footer.html` to update the footer statement.
 - Edit `js/main.js` if changing how fragments are loaded or how the copyright year is rendered.
@@ -87,4 +87,4 @@ The page uses landmarks, meaningful heading order, descriptive link text, visibl
 
 ## Contact
 
-The website currently links to the lab's GitHub repository rather than displaying an unverified email address. Update the contact link in `index.html` when an official lab contact address or collaboration page is available.
+The website currently links to the lab's GitHub repository rather than displaying an unverified email address. Update the invitation link in `index.html` when an official lab contact address or collaboration page is available.
