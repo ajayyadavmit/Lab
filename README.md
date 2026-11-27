@@ -4,7 +4,18 @@ A simple, responsive one-page site for the **Conscious Systems & Applied AI Lab*
 
 <!-- toc -->
 
+- [About the lab](#about-the-lab)
+- [Website features](#website-features)
+- [Project structure](#project-structure)
+- [Run locally](#run-locally)
+- [Customize the design](#customize-the-design)
+- [Update the content and shared fragments](#update-the-content-and-shared-fragments)
+- [Publish](#publish)
+- [Accessibility and privacy notes](#accessibility-and-privacy-notes)
+- [Contact](#contact)
+
 <!-- tocstop -->
+
 ## About the lab
 
 The lab explores how applied AI can support human awareness, agency, learning, and meaningful connection. The site makes this focus accessible through a short research introduction and open questions for prospective collaborators.
